@@ -42,8 +42,9 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.setContentType("text/Html;charset=gb2312");
-		response.setCharacterEncoding("gb2312");
+//		request.setContentType("text/Html;charset=gb2312");
+		request.setCharacterEncoding("gb2312");
+		String charset = request.getCharacterEncoding();
 		
 		//从请求获取数据
 		
@@ -55,17 +56,21 @@ public class RegisterServlet extends HttpServlet {
 		
 		String country = request.getParameter("country");
 		
-		String likes = request.getParameter("likes");
+		String[] likes = request.getParameterValues("likes");
 		
 		String remark = request.getParameter("remark");
 		
+		//设置response的字符集
+		response.setContentType("text/html;charset=gb2312");
 		PrintWriter out = response.getWriter();
 		
 		out.println(userName + "<br>");
 		out.println(password + "<br>");
 		out.println(sex + "<br>");
 		out.println(country + "<br>");
-		out.println(likes + "<br>");
+		for(int i = 0; i<likes.length;i++){
+			out.println(likes[i] + "<br>");
+		}
 		out.println(remark + "<br>");
 		
 		out.close();

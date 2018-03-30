@@ -3,6 +3,7 @@ package cn.com.systop.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -76,9 +77,10 @@ public class BSInfoServlet extends HttpServlet {
 	}
 
 	@Override
-	public void init() throws ServletException {
+	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		super.init();
+		super.init(config);
 	}
+
 
 }
