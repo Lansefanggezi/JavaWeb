@@ -35,6 +35,8 @@ public class ServletForHidden extends HttpServlet {
 		response.setCharacterEncoding("gb2312");
 		response.setContentType("text/html");
 		
+		PrintWriter out = response.getWriter();
+		
 		//从Cookie取值
 		Cookie[] cookies = request.getCookies();
 		String nameForCookie = null;
@@ -46,6 +48,7 @@ public class ServletForHidden extends HttpServlet {
 			{
 				nameForCookie = one.getValue();
 			}
+			out.println(one.getName()+":"+ one.getValue()+"<br>");
 		}
 		
 		//从URL中获取数据
@@ -53,8 +56,6 @@ public class ServletForHidden extends HttpServlet {
 		
 		//从隐藏表单域获取数据
 		String nameHidden = request.getParameter("username");
-		
-		PrintWriter out = response.getWriter();
 		
 		out.println("打印Cookie中获取的值：" + nameForCookie + "<br>");
 		out.println("打印URL中获取的数据：" + nameUrl + "<br>");
