@@ -41,6 +41,7 @@ public class FilterForIP implements Filter {
 		
 		//判断IP地址前三位是不是192
 		if("192".equals(ipBegin))
+//		if(true)
 		{
 			request.setAttribute("errorip", "ip地址不正确 不能登陆");
 			request.getRequestDispatcher("Login.jsp").forward(request, response);

@@ -38,6 +38,8 @@ public class FilterDemo implements Filter {
 		request.setCharacterEncoding(targetEncoding);
 		
 		System.out.println("当前字符格式" + targetEncoding);
+//		request.setAttribute("errorip", "ip地址不正确 不能登陆");
+//		request.getRequestDispatcher("Login.jsp").forward(request, response);
 		chain.doFilter(request, response);
 	}
 
