@@ -6,21 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>登陆</title>
 	<script type="text/javascript">
-	function check(){
-		var userName = document.LoginForm.userName.value;
-		var userPwd = document.LoginForm.passwold.value;
-
-		if (userName == "") {
-			alert("用户名不能为空");
-			return false;
+		function check(){
+			var userName = document.LoginForm.userName.value;
+			var userPwd = document.LoginForm.passwold.value;
+	
+			if (userName == "") {
+				alert("用户名不能为空");
+				return false;
+			}
+	
+			if (userPwd == "") {
+				alert("请输入密码");
+				return false;
+			}
+			return true;
 		}
-
-		if (userPwd == "") {
-			alert("请输入密码");
-			return false;
-		}
-		return true;
-	}
 	</script>
 </head>
 <body background="#ffffff">
@@ -53,11 +53,12 @@
 				<td align="center">
 				</td>
 				<td align="left">
-					<input type="submit" name="submit" value="提交" onclick="reurn check()">
+					<input type="submit" name="submit" value="提交" onclick="if(!check()) return false;">
 					<input type="reset" name="submit" value="重置">
 				</td>
 			</tr>
 		</table>
+		<p align="center"><span>${errorip}</span></p>
 		<jsp:useBean id="loginUser" class="cn.com.systop.javabean.UserBean" scope="request"></jsp:useBean>
 		<%
 		if(loginUser.getError() != null)
