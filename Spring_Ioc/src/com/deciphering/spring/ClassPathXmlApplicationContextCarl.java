@@ -1,6 +1,8 @@
 package com.deciphering.spring;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +16,9 @@ public class ClassPathXmlApplicationContextCarl implements BeanFactory {
 
 	private Map<String,Object> bean = new HashMap<String,Object>();
 	
-	public ClassPathXmlApplicationContextCarl() throws JDOMException, IOException, InstantiationException, IllegalAccessException, ClassNotFoundException
+	public ClassPathXmlApplicationContextCarl() throws JDOMException, IOException, InstantiationException, IllegalAccessException,
+					ClassNotFoundException, NoSuchMethodException, SecurityException, 
+					IllegalArgumentException, InvocationTargetException
 	{
 		SAXBuilder saxBuilder = new SAXBuilder();
 		
@@ -43,6 +47,30 @@ public class ClassPathXmlApplicationContextCarl implements BeanFactory {
 			System.out.println("此bean的id：" + id);
 			System.out.println("此bean的classPath" + classPath);
 			bean.put(id, o);
+			
+			//实现依赖注入
+			//便利Bean下的所有property节点
+			for(Element elementSon : (List<Element>)element.getChildren("property"))
+			{
+				//获取子节点的ID
+				String sonId = elementSon.getAttributeValue("name");
+				
+				//获取子节点的bean
+				String sonClass = elementSon.getAttributeValue("bean");
+				
+				//取得被注入的实例
+				Object sonBean = bean.get(sonClass);
+				
+				//获得相应属性的set方法的方法名
+				String methodName = "set" + sonId.substring(0, i).toUpperCase()+sonId.substring(1);
+				System.out.println(methodName);
+				
+				//使用反射取得指定名称，指定参数类型的setMXXX方法
+				Method m =  o.getClass().getMethod(methodName, sonBean.getClass().getInterfaces()[0]);
+				
+				//调用对象的setXXX方法
+				m.invoke(o, sonBean);
+			}
 		}
 		
 	}
