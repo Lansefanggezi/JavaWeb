@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PERSON>
+	<!-- 描述会员的信息 -->
+	<manber name="carl">
+		<name>carl</name>
+		<age>15</age>
+		<sex>man</sex>
+	</manber>
+	<manber name="tom">
+		<name>Tom</name>
+		<age>24</age>
+		<sex>man</sex>
+	</manber>
+</PERSON>
