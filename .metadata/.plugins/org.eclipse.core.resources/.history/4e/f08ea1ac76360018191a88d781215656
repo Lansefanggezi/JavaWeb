@@ -1,0 +1,3 @@
+<beans>
+	<bean id="human" class="com.deciphering.car.impl.Human">	</bean>
+</beans>

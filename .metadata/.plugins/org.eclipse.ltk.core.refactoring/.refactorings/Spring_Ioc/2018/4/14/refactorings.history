@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.deciphering.spring.ApplicationContextCarl&apos; to &apos;ClassPathXmlApplicationContextCarl&apos;&#x0D;&#x0A;- Original project: &apos;Spring_Ioc&apos;&#x0D;&#x0A;- Original element: &apos;com.deciphering.spring.ApplicationContextCarl&apos;&#x0D;&#x0A;- Renamed element: &apos;com.deciphering.spring.ClassPathXmlApplicationContextCarl&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ApplicationContextCarl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.deciphering.spring{ApplicationContextCarl.java[ApplicationContextCarl" matchStrategy="1" name="ClassPathXmlApplicationContextCarl" qualified="false" references="true" similarDeclarations="false" stamp="1522673450840" textual="false" version="1.0"/>
+</session>

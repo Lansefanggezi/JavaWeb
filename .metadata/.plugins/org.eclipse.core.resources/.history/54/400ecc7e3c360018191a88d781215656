@@ -1,0 +1,8 @@
+package com.systop.service;
+
+import com.systop.model.User;
+
+public interface UserService {
+
+	public void add(User user);
+}

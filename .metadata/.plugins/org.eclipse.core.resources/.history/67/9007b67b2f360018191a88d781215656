@@ -1,0 +1,13 @@
+package com.systop.bean;
+
+public class AmericanImpl implements Person {
+
+	//Ãû×Ö
+	private String naem;
+	@Override
+	public void Speak() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.deciphering.car;
+
+public interface Car {
+	
+}

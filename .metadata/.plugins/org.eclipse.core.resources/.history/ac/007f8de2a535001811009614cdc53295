@@ -1,0 +1,10 @@
+package cn.com.systop.listener;
+
+import javax.servlet.http.HttpServlet;
+
+public class LoginDo extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
+	protected void doPost()
+}

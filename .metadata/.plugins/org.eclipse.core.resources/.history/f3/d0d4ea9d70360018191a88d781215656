@@ -1,0 +1,14 @@
+package com.jdom.test;
+
+import org.jdom.input.SAXBuilder;
+
+public class JdomSample {
+
+	public static void main(String[] args)
+	{
+		SAXBuilder saxbuilder = new SAXBuiler();
+		
+		//¹¹ÔìÎÄµµ
+		Document doc = saxbuilder.build(JdomSample.class.getClassLoader().getResourceAsStream(""));
+	}
+}

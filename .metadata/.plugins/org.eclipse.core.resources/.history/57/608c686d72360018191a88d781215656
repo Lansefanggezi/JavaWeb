@@ -1,0 +1,21 @@
+package com.deciphering.car.impl;
+
+import com.deciphering.car.Car;
+
+public class BMWCar implements Car {
+
+	private String brand;
+	
+	@Override
+	public String getBrand() {
+		// TODO Auto-generated method stub
+		return brand;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

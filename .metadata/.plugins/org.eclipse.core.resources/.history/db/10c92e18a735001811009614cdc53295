@@ -1,0 +1,13 @@
+package cn.com.systop.listener;
+
+import javax.servlet.Servlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class ExitDo extends HttpServlet implements Servlet {
+
+	private static final long serialVersionUTD = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response);
+}

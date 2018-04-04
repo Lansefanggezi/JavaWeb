@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="description" content="this is my page">
+	<meta http-equiv="content-type" content="text/Html;charset=gb2312" charset="gb2312">
+	<title>首页</title>
+</head>
+<body>
+	<p>这是主页面</p>
+	<form name="form" method="get" action="ServletForCookie">
+		<label>请输入姓名：</label>
+		<input type="text" name="userName" id="userName">
+		<input type="submit" name="submit" value="提交">
+	</form>
+</body>
+</html>

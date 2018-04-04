@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=gb2312"
+    pageEncoding="gb2312"%>
+<%@ page import="java.util.Vector" %>
+<%@ page import="cn.com.systop.listener.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		//如果未登陆就转到登陆界面
+		if(session.getAttribute("userName") == null)
+		{
+			response.sendRedirect("Login.jsp");
+		}
+	Vector onlineUsers = UserList.getVector();
+	%>
+	<center>
+		<br></br>
+		<h2>登陆成功</h2>
+		<hr>
+		<lable>欢迎你：</lable>
+		<%=session.getAttribute("userName") %>
+		<a href="exitDo">推出登陆</a>
+		<label>当前在线人数</label>
+		<%=UserList.getUserCount() %>
+		<br></br>
+		<label>在线人员名单</label>
+		<br></br>
+		<select multiple="multiple" name="list" style ="width:200px; height:250px;">
+		<%
+			for(int i = 0; i<onlineUsers.size();i++)
+			{
+				out.write("<option>");
+			}
+		%>
+		</select>
+	</center>
+</body>
+</html>

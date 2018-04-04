@@ -1,0 +1,5 @@
+package com.systop.service;
+
+public interface UserService {
+
+}

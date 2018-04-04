@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:cache="http://www.springframework.org/schema/cache"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/jdbc
+    http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+    http://www.springframework.org/schema/cache
+    http://www.springframework.org/schema/cache/spring-cache-3.1.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+	<!--     配置Chinese实例，其实现类为com.systop.bean.ChineseImpl -->
+	<bean id="Chinese" class="com.systop.bean.ChineseImpl">
+		<!-- 	将值注入name属性 -->
+		<property name="name">
+			<value>小明</value>
+		</property>
+		<!-- 	将值注入age属性 -->
+		<property name="age">
+			<value>18</value>
+		</property>
+	</bean>
+	<!-- 	配置American实例，其实现类为com.systop.bean.AmericanImpl -->
+	<bean id="American" class="com.systop.bean.AmericanImpl">
+		<!--	将值注入name属性 -->
+		<property name="name">
+			<value>Carl</value>
+		</property>
+		<!-- 	将值注入age属性 -->
+		<property name = "age">
+			<value>24</value>
+		</property>
+	</bean>
+	<bean name="UserDaoImpl"></bean>
+    </beans>

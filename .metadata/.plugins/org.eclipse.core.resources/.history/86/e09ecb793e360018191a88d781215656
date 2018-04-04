@@ -1,0 +1,20 @@
+package com.systop.spring;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.systop.model.User;
+
+public class TestDI {
+	@Test
+	public void test() {
+		User user= new User();
+		user.setUserName("liuxiaoknag");
+		user.setAge(18);
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		context.getBean("UserServiceImpl");
+	}
+
+}

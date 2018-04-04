@@ -1,0 +1,9 @@
+package cn.com.systop.listener;
+
+import java.util.Vector;
+
+public class UserList {
+
+	private static Vector onlineUsers = new Vector();
+	
+}

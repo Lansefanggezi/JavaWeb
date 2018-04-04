@@ -1,0 +1,11 @@
+package com.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//将类声明为Spring容器当中的bean，当调用时对该类实例化
+@Controller
+@RequestMapping("/welcome")
+public class HelloController {
+
+}

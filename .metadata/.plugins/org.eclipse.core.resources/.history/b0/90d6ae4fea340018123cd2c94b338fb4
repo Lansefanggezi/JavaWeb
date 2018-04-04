@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="context-type" content="text/html;charset=gb2312"  >
+	<title>首页</title>
+</head>
+<body>
+	<p>这是主页面</p>
+	<form name="form" method="get" action="ServletForCookie">
+		<label>请输入姓名：</label>
+		<input type="text" name="userName">
+		<input type="submit" name="submit" value="提交">
+	</form>
+</body>
+</html>

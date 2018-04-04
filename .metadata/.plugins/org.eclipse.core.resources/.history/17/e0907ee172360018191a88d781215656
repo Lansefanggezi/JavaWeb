@@ -1,0 +1,7 @@
+package com.deciphering.car.impl;
+
+public class Human {
+
+	Car car;
+	
+}

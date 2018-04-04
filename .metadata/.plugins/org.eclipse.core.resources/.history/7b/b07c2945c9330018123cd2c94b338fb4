@@ -1,0 +1,10 @@
+package cn.com.systop.javabean;
+
+public class UserInfo {
+
+	private String userName;
+	
+	private String passwold;
+	
+	private String sex;
+}

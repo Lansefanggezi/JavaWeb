@@ -1,0 +1,5 @@
+package com.systop.dao;
+
+public class UserDao {
+
+}

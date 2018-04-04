@@ -1,0 +1,13 @@
+package com.systop.spring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring {
+
+	public static void mian(String[] args)
+	{
+		//´´½¨SpringÈÝÆ÷
+		ApplicationContext context = new ClassPathXmlApplicationContext("");
+	}
+}

@@ -1,0 +1,5 @@
+package com.systop.model;
+
+public class User {
+
+}

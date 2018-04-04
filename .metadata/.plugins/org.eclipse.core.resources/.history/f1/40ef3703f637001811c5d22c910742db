@@ -1,0 +1,9 @@
+package com.spring.controller;
+
+import org.springframework.stereotype.Controller;
+
+//将类声明为Spring容器当中的bean，当调用时对该类实例化
+@Controller
+public class HelloController {
+
+}

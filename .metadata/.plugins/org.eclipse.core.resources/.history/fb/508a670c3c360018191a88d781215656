@@ -1,0 +1,6 @@
+package com.systop.dao;
+
+public interface UserDao {
+
+	
+}

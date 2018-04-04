@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PERSON>
+	<!-- 描述会员的信息 -->
+	<chain>
+		<name>Carl</name>
+		<age>15</age>
+		<sex>man</sex>
+	</chain>
+</PERSON>

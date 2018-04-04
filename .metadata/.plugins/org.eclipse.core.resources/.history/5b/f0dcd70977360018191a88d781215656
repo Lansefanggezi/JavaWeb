@@ -1,0 +1,16 @@
+package com.deciphering.test;
+
+import org.junit.Test;
+
+import com.deciphering.spring.ClassPathXmlApplicationContextCarl;
+
+public class HumanTest {
+
+
+	@Test
+	public void test() {
+		
+		ClassPathXmlApplicationContextCarl context = new ClassPathXmlApplicationContextCarl();
+	}
+
+}

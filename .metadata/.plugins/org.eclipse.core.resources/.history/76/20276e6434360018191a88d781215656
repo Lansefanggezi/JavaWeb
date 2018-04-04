@@ -1,0 +1,6 @@
+package com.systop.spring;
+
+public class TestSpring {
+
+	public static void mian(){}
+}
