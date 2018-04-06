@@ -1,6 +1,0 @@
-<beans>
-	<bean id="car" class="com.deciphering.car.impl.BMWCar"></bean>
-	<bean id="human" class="com.deciphering.car.impl.Human">
-		<p name="car" bean="car"></p>
-	</bean>
-</beans>

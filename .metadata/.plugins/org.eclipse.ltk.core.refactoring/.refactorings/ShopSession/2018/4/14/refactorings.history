@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;ShopSession/WebContent/WEB-INF/Web.xml&apos; to &apos;web.xml&apos;" description="Rename resource &apos;Web.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/WEB-INF/Web.xml" name="web.xml" stamp="1522569070102" updateReferences="true"/>
-</session>

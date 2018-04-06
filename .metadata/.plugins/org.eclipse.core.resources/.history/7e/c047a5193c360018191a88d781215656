@@ -1,6 +1,0 @@
-package com.systop.dao;
-
-public interface UserDao {
-
-	protected void save(User user);
-}

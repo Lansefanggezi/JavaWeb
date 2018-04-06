@@ -1,6 +1,0 @@
-package com.deciphering.car.impl;
-
-public class Human {
-
-	private Car car;
-}

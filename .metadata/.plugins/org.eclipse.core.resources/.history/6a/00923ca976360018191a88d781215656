@@ -1,4 +1,0 @@
-<beans>
-	<bean id="human" class="c">
-	</bean>
-</beans>
