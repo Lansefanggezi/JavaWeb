@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<!--  利用Scope属性设置bean的作用域 默认scope属性的值是Singleten  容器再创造的时候就实例化所有的SingletenBean  -->
+
+	<bean id="car" class="com.kang.spring.bean.autowire.Car" scope="prototype">
+		<property name="name" value="aodi"></property>
+		<property name="price" value="2000"></property>
+	</bean>
+	
+</beans>
