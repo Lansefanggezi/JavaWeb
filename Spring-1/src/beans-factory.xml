@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 配置静态工厂方法
+		class 执行静态方法类的全类名
+		factory-method 指向静态方法；
+		可以通过 constructor-arg来给静态方法传参数
+	 -->
+	<bean id="car1" class="com.kang.spring.bean.factory.StaticFactory"
+		factory-method="getCar">
+			<constructor-arg value="aodi"></constructor-arg>
+		</bean>
+<!-- 	配置实例工厂方法 -->
+	<bean id="factory"  class="com.kang.spring.bean.factory.InstanceFactory"></bean>
+	<bean id="car2"  factory-bean="factory"  factory-method="getCar">
+		<constructor-arg value="baoma"></constructor-arg>
+	</bean>
+	
+</beans>
