@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="car" class="com.kang.spring.bean.autowire.Car"
+	p:name="aodi"
+	p:price="100"
+	></bean>
+	<bean id="address" class="com.kang.spring.bean.autowire.Address"
+	p:city="shagnhai"
+	p:street="huangguan"
+	></bean>
+	<bean id="personfather" class="com.kang.spring.bean.autowire.Person"
+	p:name="xiaokang"
+	p:age="23"
+	p:myCar-ref="car"
+	p:address-ref="address"
+	></bean>
+<!-- 	利用bean的parent属性设置bean的父bean -->
+	<bean id="person" class="com.kang.spring.bean.autowire.Person"
+	parent="personfather"
+	></bean>
+
+</beans>
