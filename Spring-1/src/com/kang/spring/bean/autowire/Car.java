@@ -22,5 +22,8 @@ public class Car {
 	public String toString() {
 		return "Car [name=" + name + ", price=" + price + "]";
 	}
+	public Car() {
+		System.out.println("car 构造方法");
+	}
 	
 }

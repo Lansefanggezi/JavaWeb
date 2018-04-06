@@ -3,6 +3,8 @@ package com.kang.spring.bean.autowire;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.kang.spring.bean.autowire.Person;
+
 public class TestMain {
 
 	public static void main(String[] args) {
