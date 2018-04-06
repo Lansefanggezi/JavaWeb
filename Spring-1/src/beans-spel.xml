@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 通过spel表达式赋常量值 -->
+	<bean id="address" class="com.kang.spring.bean.spel.Address">
+		<property name="city" value="#{'beijing'}"></property>
+		<property name="street" value="wudadao"></property>
+	</bean>
+	<!-- 	通过spel表达式引用静态常量进行计算 -->
+		<bean id="car" class="com.kang.spring.bean.spel.Car">
+			<property name="name" value="baoma "></property>
+			<property name="price" value="3000"></property>
+			<property name="width" value="#{ T(java.lang.Math).PI*80}"></property>
+		</bean>
+<!-- 		应用对象以及对象的属性，并进行判断 -->
+	<bean id="person" class="com.kang.spring.bean.spel.Person">
+		<property name="name" value="#{'xiaokang'}"></property>
+			<property name="age" value="21"></property>
+			<property name="info" value="#{car.price >300 ?'bailing': 'jinling'}"></property>
+			<property name="address" value="#{address}"></property>
+			<property name="myCar"  value="#{car}"></property>
+	</bean>
+</beans>
