@@ -13,4 +13,9 @@
 		<constructor-arg value="shanghai"></constructor-arg>
 		<constructor-arg value="2000"></constructor-arg>
 	</bean>
+	<bean id="car2" class="com.kang.spring.helloworld.Car">
+		<constructor-arg value="baoma"></constructor-arg>
+		<constructor-arg value="luoma "></constructor-arg>
+		<constructor-arg value="240"  type="int"></constructor-arg>
+	</bean>
 </beans>
