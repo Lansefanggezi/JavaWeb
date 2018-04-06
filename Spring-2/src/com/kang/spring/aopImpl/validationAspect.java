@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class validationAspect {
 
-	@Before(value="execution(* com.kang.spring.aopImpl.*.*(int, int))")
+	@Before(value="LoggingAspect.declareJoinPointExpression()")
 	public void  validataion()
 	{
 		System.out.println("----->validation");

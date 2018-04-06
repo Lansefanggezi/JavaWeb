@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-	@Before(value = "execution( public int com.kang.spring.aopImpl.AtithmeticCalculatorImpl.*(* , * ))")
+	@Pointcut(value="execution(* com.kang.spring.aopImpl.*.*(int,int))")
+	public void declareJoinPointExpression()
+	{}
+	
+	@Before(value = "declareJoinPointExpression()")
 	public void beforMethod(JoinPoint joinpoint )
 	{
 		String methodName = joinpoint.getSignature().getName();
