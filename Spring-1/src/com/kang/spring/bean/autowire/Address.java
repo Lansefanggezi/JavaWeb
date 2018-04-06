@@ -18,6 +18,10 @@ public class Address {
 	public void setStreet(String street) {
 		this.street = street;
 	}
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", street=" + street + "]";
+	}
 	
 	
 }

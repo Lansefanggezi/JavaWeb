@@ -18,4 +18,5 @@
 		<constructor-arg value="luoma "></constructor-arg>
 		<constructor-arg value="240"  type="int"></constructor-arg>
 	</bean>
+
 </beans>
