@@ -14,8 +14,14 @@
 		</bean>
 <!-- 	配置实例工厂方法 -->
 	<bean id="factory"  class="com.kang.spring.bean.factory.InstanceFactory"></bean>
+	
+<!-- 	通过实例工厂来配置Bean -->
 	<bean id="car2"  factory-bean="factory"  factory-method="getCar">
 		<constructor-arg value="baoma"></constructor-arg>
 	</bean>
-	
+<!-- 	配置FactoryBean的实例 -->
+	<bean id="car"  class="com.kang.spring.bean.factooryBean.MyFactoryBean">
+		<property name="brand" value="baoma"></property>
+		<property name="price" value="3000"></property>
+	</bean>
 </beans>
