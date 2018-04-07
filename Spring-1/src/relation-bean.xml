@@ -22,5 +22,6 @@
 	<bean id="person" class="com.kang.spring.bean.autowire.Person"
 	parent="personfather"
 	></bean>
-
+<!-- 	利用Bean的depen-on来设置Bean的依赖关系 -->
+	<bean id="personsan" class="com.kang.spring.bean.autowire.Person" depends-on="person"></bean>
 </beans>

@@ -17,6 +17,9 @@ public class TestMain {
 		System.out.println(personfather.toString());
 		
 		System.out.println(person == personfather);
+
+		Person san = (Person) context.getBean("personsan");
+		System.out.println(san.toString());
 	}
 
 }
