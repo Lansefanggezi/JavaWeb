@@ -6,6 +6,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+<!-- 	注解扫描路径 -->
+	<context:component-scan base-package="com.kang.spring"></context:component-scan>
+	
 <!-- 	导入外部文件 -->
 		<context:property-placeholder location="classpath:db.properties"/>
 		
@@ -16,8 +19,21 @@
 			<property name="jdbcUrl" value="${jdbcUrl}"></property>
 			<property name="driverClass" value="${driverClass}"></property>
 		</bean>
+		
 <!-- 	配置JDBCTemplate -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource"  ref="dataSource"></property>
 	</bean>
+	
+<!-- 	配置NamedParameterJdbcTemplate -->
+	<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+	</bean>
+	
+<!-- 	配置事务注解 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+<!-- 	启用事务注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
