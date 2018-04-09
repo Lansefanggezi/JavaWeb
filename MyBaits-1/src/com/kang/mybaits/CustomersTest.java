@@ -18,7 +18,7 @@ public class CustomersTest {
 		
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
 		
-		SqlSession session = factory.openSession(true);
+		SqlSession session = factory.openSession();
 		
 		//mapperµÄnamespace+selectId
 //		String stamentSelect = "com.kang.mybaits.customerMapper"+".getCustomer";

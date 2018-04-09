@@ -64,4 +64,14 @@ public class test1 {
 		List<Customer> customers =  session.selectList(statement);
 		System.out.println(customers);
 	}
+	
+	@Test
+	public void testAnnosation()
+	{
+		 SqlSession session = factory.openSession();
+		 
+		 CustomersMapper customersMapper =  session.getMapper(CustomersMapper.class);
+		 customersMapper.updateCustomer(new Customer("liuxiaokang","xiao",200));
+		 
+	}
 }

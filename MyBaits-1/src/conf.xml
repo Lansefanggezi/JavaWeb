@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration> 
+<!-- 	 导入外部文件 -->
+	<properties resource="db.properties">
+	</properties>
+	
+<!-- 	给实体类取别名 -->
+	<typeAliases>
+		<typeAlias type="com.kang.mybaits.Customer" alias="_Customer"/>
+	</typeAliases>
+	
 	<!-- 工作模式default="work"
 	也可以是开发模式  default="development"
 	 -->
+
 	<environments default="development"> 
 		<environment id="development">
 			 <transactionManager type="JDBC" /> 
 				 <dataSource type="POOLED"> 
-				 <property name="driver" value="com.mysql.jdbc.Driver" /> 
-				 <property name="url" value="jdbc:mysql:///runoob" /> 
-				 <property name="username" value="root" /> 
-				 <property name="password" value="kang0622" />
+				 <property name="driver" value="${driver}" /> 
+				 <property name="url" value="${jdbcUrl}" /> 
+				 <property name="username" value="${username}" /> 
+				 <property name="password" value="${password}" />
 				  </dataSource> 
 	  	</environment>
    </environments>
    <mappers>
+   
 	<!--    路径结构 -->
    	<mapper resource="com/kang/mybaits/customerMapper.xml"/>
    	<mapper resource="com/kang/mybaits/test1/customerMapper.xml"/>
+   	<mapper class="com.kang.mybaits.test2.CustomersMapper"/>
+   	<mapper resource="com/kang/mybaits/test3/MyBaits.xml"/>
+   	<mapper resource="com/kang/mybaits/test4/MyBaits4.xml"/>
    </mappers>
 </configuration>

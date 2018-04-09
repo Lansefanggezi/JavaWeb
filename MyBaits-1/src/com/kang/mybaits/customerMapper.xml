@@ -13,12 +13,12 @@
 	<!-- 	
 		CRUD操作
 	 -->
-	 <update id="updateCus" parameterType="com.kang.mybaits.Customer" >
+	 <update id="updateCus" parameterType="_Customer" >
 		 update customers set username = #{username} ,userpassword = #{userpassword}, balance = #{balance} 
 		 where username = #{username}
 	 </update>
 	 
-	 <insert id="insert" parameterType="com.kang.mybaits.Customer">
+	 <insert id="insert" parameterType="_Customer">
 		 inset into customers (username,userpassword,balance) values(#{username}, #{userpassword},#{balance})
 	 </insert>
 	 
