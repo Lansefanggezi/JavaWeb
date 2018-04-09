@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--  对应的接口类的全类名 -->
-<mapper namespace="com.kang.mybaits.customerMapper">
+<mapper namespace="com.kang.mybaits.test1.customerMapper">
 <!-- parameterTyper  对应参数的类型
 	resultType 对应返回对象的类型
 	resutlMap 通过配置resultMap来接受返回对象，可以解决实体类和表字段不符合的问题
@@ -13,16 +13,25 @@
 	<!-- 	
 		CRUD操作
 	 -->
+<!-- 	 更新操作 -->
 	 <update id="updateCus" parameterType="com.kang.mybaits.Customer" >
 		 update customers set username = #{username} ,userpassword = #{userpassword}, balance = #{balance} 
 		 where username = #{username}
 	 </update>
 	 
-	 <insert id="insert" parameterType="com.kang.mybaits.Customer">
-		 inset into customers (username,userpassword,balance) values(#{username}, #{userpassword},#{balance})
+<!-- 	 插入操作 -->
+	 <insert id="insertCus" parameterType="com.kang.mybaits.Customer">
+		 insert into customers (username,userpassword,balance) values(#{username}, #{userpassword},#{balance})
 	 </insert>
 	 
-	 <delete id="delete" parameterType="String">
+<!-- 	 删除操作 -->
+	 <delete id="deleteCus" parameterType="String">
 	 	delete from  customers where userpassword = #{userpassword}
 	 </delete>
+<!-- 	 查询所有
+	只需用用resultType配置接受返回值的List中的类型即可 
+-->
+		<select id="selectAll"  resultType="com.kang.mybaits.Customer">
+		select * from customers
+		</select>
 </mapper>

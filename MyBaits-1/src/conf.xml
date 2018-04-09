@@ -18,5 +18,6 @@
    <mappers>
 	<!--    路径结构 -->
    	<mapper resource="com/kang/mybaits/customerMapper.xml"/>
+   	<mapper resource="com/kang/mybaits/test1/customerMapper.xml"/>
    </mappers>
 </configuration>
