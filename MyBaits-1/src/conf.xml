@@ -33,5 +33,6 @@
    	<mapper class="com.kang.mybaits.test2.CustomersMapper"/>
    	<mapper resource="com/kang/mybaits/test3/MyBaits.xml"/>
    	<mapper resource="com/kang/mybaits/test4/MyBaits4.xml"/>
+   	<mapper resource="com/kang/mybaits/test5/MyBaits5.xml"/>
    </mappers>
 </configuration>

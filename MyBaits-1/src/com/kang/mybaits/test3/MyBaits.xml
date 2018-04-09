@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.mybaits.test3.MyBaits">
+	
+	<select id="getClases" parameterType="int" resultMap="ClassMap"   >
+	select * from teacher t,class c where t.t_id=c.teacher_id and c.c_id = #{id}
+	</select>
+	<resultMap type="com.kang.mybaits.bean.Classes" id="ClassMap">
+		<id property="id"  column="c_id"/>
+		<result property="name" column="c_name"/>
+		<association property="teacher" javaType="com.kang.mybaits.bean.Teacher">
+			<id property="id" column="t_id"/>
+			<result property="name"	 column="t_name"		/>
+		</association>
+	</resultMap>
+</mapper>
