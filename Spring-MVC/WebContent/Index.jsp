@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>注册页面</title>
+<title>登陆页面</title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 		<col width="">
 			<tr>
 				<td colspan="2">
-					<h2>用户注册</h2>
+					<h2>用户登陆</h2>
 				</td>
 			</tr>
 			<tr>
@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 				<td align="center">
-					<input type="submit" name="submit" value="提交">
+					<input type="submit" name="submit" value="登陆">
 				</td>
 				<td align="center">
 					<input type="reset" name="submit" value="重置">

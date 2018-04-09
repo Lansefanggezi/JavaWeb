@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 //声明Controller处理的请求 类级别
 @RequestMapping("/Spring-MVC") 
-public class HelloController {
+public class BookShopController {
 
 	//方法级别的
 	@RequestMapping("/pringWelcome")
