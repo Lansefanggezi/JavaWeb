@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+		 namespace 必须要与对应的接口全类名一致
+		 
+		 insert : id 必须与对应接口的某个方法名一致
+ -->
+<mapper namespace="com.kang.dao.UserMapper">
+	<insert id="save"  parameterType="com.kang.entity.User">
+		insert into user(id, name,birthday,salary)  values(#{id},#{name},#{birthday},#{salary})
+	</insert>
+</mapper>
