@@ -8,11 +8,11 @@
  	<select id="getClass" parameterType="int" resultMap="getClassMap" >
  	SELECT * FROM class c, teacher t,student s WHERE c.teacher_id=t.t_id AND c.C_id=s.class_id AND  c.c_id=#{id}
  	 </select>
- 	 <resultMap type="" id="getClassMap"  >
- 	 	<id property="" column=""/>
- 	 	<collection property="" ></collection>
- 	 	<association property="" ></association>
- 	 </resultMap>
+<!--  	 <resultMap type="" id="getClassMap"  > -->
+<!--  	 	<id property="" column=""/> -->
+<!--  	 	<collection property="" ></collection> -->
+<!--  	 	<association property="" ></association> -->
+<!--  	 </resultMap> -->
  	 
  	 
   </mapper>
