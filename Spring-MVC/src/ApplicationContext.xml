@@ -2,14 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
 	<!--     指定注入bean时Spring要查找的包 -->
-	<context:component-scan base-package="com.spring.controller"></context:component-scan>
-	
-  <!-- 这两个类用来启动基于Spring MVC的注解功能，将控制器与方法映射加入到容器中 -->
-  	<context:component-scan base-package="com.spring"></context:component-scan>    
+	<context:component-scan base-package="com.spring"></context:component-scan>
   
 	<!-- 	配置视图解析器，使用InternalResourceViewResolver类作为视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -22,5 +21,30 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	
+<!-- 	启用DataSource配置文件 -->
+	<context:property-placeholder location="classpath:db.properties"/>
+<!-- 	配置数据源 -->
+	<bean id="dataSource"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url" value="Jdbc:mysql:///runoob"></property>
+		<property name="password" value="kang0622"></property>
+		<property name="username" value="root"></property>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	</bean>
+<!-- 配置sqlSessionFactoryBean -->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"></property>
+	<property name="typeAliasesPackage" value="com.spring.entitiy"></property>
+</bean>
+<!-- MyBatis自动扫描SQL映射文件：MapperScannerConfigurer -->
+<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	<property name="basePackage" value="com.spring.dao"></property>
+</bean>
+<!-- 事务管理类：DataSourceTransactionManager -->
+<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<property name="dataSource" ref="dataSource"></property>
+</bean>
+
+<!-- 使用声明式事务 -->
+<tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
 </beans>

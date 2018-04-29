@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="Spring-MVC/pringWelcome" method="post">
+<form action="Spring-MVC/buyBook" method="post">
 <table width="757" height="108" align="center">
 		<col width="300">
 		<col width="">
@@ -17,13 +17,14 @@
 				<td colspan="2">
 					<h2>用户登陆</h2>
 				</td>
+				<td ><a url="<%=request.getRealPath("/")%>WebContent\WEB-INF\jsp\register.jsp">注册</a></td>
 			</tr>
 			<tr>
 				<td align="right">
 					用户名：
 				</td>
 				<td align="left">
-					<input type="text" name="userName" width="200">
+					<input type="text" name="username" width="200">
 				</td>
 			</tr>
 			<tr>
@@ -31,7 +32,7 @@
 					密码：
 				</td>
 				<td align="left">
-					<input type="passwold" name="passwold" width="200">
+					<input type="passwold" name="userpassword" width="200">
 				</td>
 			</tr>
 			<tr>

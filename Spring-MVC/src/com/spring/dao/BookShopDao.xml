@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+		 namespace 必须要与对应的接口全类名一致
+		 
+		 insert : id 必须与对应接口的某个方法名一致
+ -->
+<mapper namespace="com.spring.dao.BookShopDao">
+
+	<select id="findUserByNameAndPassWord"  parameterType="Customers" resultType="java.lang.Integer">
+		select count(*) From customers where username = #{username} and userpassword = #{userpassword}
+	</select>
+	
+	<select id="findBookPriceByIsbn" parameterType="int">
+		select book_price from price where isbn=#{isbn}
+	</select>
+	
+	<update id="updateBookCountByIsbn" parameterType="int">
+		update stock set stock = stock-1 where isbn = #{isbn}
+	</update>
+	
+	<update id="updateUserBalanceByUserName"  parameterType="Customers">
+		update customers set balance =balance -  #{balance}  where username = #{username}
+	</update>
+	
+	<insert id="insertUser" parameterType="Customers">
+		inser into customers (username,password,balance) values(#{username} ,#{userpassword},0)
+	</insert>
+</mapper>

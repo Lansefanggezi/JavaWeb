@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form action="Spring-MVC/pringWelcome" method="post">
+<form action="Spring-MVC/register" method="post">
 <table width="757" height="108" align="center">
 		<col width="300">
 		<col width="">
