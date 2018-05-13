@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhide.dao.UserManagementDao">
+
+<!-- 	查询用户密码 -->
+	<select id="findPassword"  parameterType="LoginCondition" resultType="java.lang.Integer">
+		select count('userid') from zd_user where loginname = #{loginName} and password = #{passWord}
+	</select>
+	
+<!-- 	查詢用戶詳細信息 -->
+	<select id="findUserById" parameterType="String" resultMap="UserResultMap">
+		select * from zd_user, zd_role where zd_user.userroleid = zd_role.roleid and zd_user.LOGINNAME = #{userName}
+	</select>
+	
+<!-- 	查询所有用户 -->
+	<select id="findAllUser"  resultMap="UserResultMap">
+		select * from zd_user, zd_role where zd_user.userroleid = zd_role.roleid order by zd_user.userid
+	</select>
+	<resultMap type="User" id="UserResultMap">
+		<id property="userID" column="userId"/>
+		<result property="loginName" column="loginName"/>
+		<result property="passWord" column="passWord"/>
+		<result property="realName" column="realName"/>
+		<result property="sex" column="sex"/>
+		<result property="phone" column="phone"/>
+		<association property="role" column="roleid"  javaType="Role">
+			<id property="roleId" column="ROLEID"/>
+			<result property="roleName" column="ROLENAME"/>
+		</association>
+	</resultMap>
+	
+<!-- 	查询所有角色 -->
+	<select id="findAllRole" resultType="Role">
+		select * from zd_role 
+	 </select>
+	 
+<!-- 	 更新用户信息 -->
+	<update id="updateUser" parameterType="User">
+		update zd_user
+		 	set LOGINNAME=#{loginName},
+		 			PASSWORD=#{passWord},
+		 			<if test="realName != null and realName !=''" >  
+		 				REALNAME=#{realName},
+		 			</if>
+		 			<if test="sex != null and sex !=''" >  
+		 			SEX=#{sex},
+		 			</if>
+		 			<if test="phone != null and phone !=''" >  
+		 			PHONE=#{phone},
+		 			</if>
+		 			USERROLEID=#{role.roleId}
+		 			where zd_user.USERID = #{userID}
+	</update>
+	
+<!-- 	新建用户 -->
+	<insert id="insertUser"  parameterType="User">
+		insert into zd_user(
+			LOGINNAME,
+			PASSWORD
+ 			<if test="realName != null and realName !=''" >  
+ 				,REALNAME
+ 			</if>
+ 			<if test="sex != null and sex !=''" >  
+ 				,SEX
+ 			</if>
+ 			<if test="phone != null and phone !=''" >  
+ 				,PHONE
+ 			</if> 			
+ 			<if test="role != null ">
+	 			<if test="role.roleId != null and role.roleId !=''" >  
+	 				,USERROLEID
+	 			</if>
+ 			</if>
+			) values(
+				#{loginName},
+				#{passWord}
+ 			<if test="realName != null and realName !=''" >  
+ 				,#{realName}
+ 			</if>
+ 			<if test="sex != null and sex !=''" >  
+ 				,#{sex}
+ 			</if>
+ 			<if test="phone != null and phone !=''" >  
+ 				,#{phone}
+ 			</if> 				
+ 			<if test="role != null ">
+	 			<if test="role.roleId != null and role.roleId !=''" >  
+	 				,#{role.roleId}
+	 			</if>
+ 			</if>
+ 			)
+	</insert>
+<!-- 	删除用户 -->
+	<delete id="delectUser" parameterType="String">
+		delete from zd_user where userid = #{id}
+	</delete>
+</mapper>
